@@ -9,7 +9,17 @@ var requestComplete = function(){
   if (this.status !== 200) return;
   var jsonString = this.responseText;
   var beers = JSON.parse(jsonString);
-}
+  listBeerNames(beers);
+};
+
+var listBeerNames = function(beers){
+  var ul = document.getElementById('beer-list');
+  for (beer of beers){
+    var thisBeer = document.createElement('li')
+    thisBeer.innerText = beer.name;
+    ul.appendChild(thisBeer);
+  }
+};
 
 
 var app = function(){
