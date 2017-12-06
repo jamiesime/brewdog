@@ -38,6 +38,25 @@ var beerProfileSetUp = function(profile){
   var name = document.createElement('p');
   name.innerText = profile.name;
   thisBeer.appendChild(name);
+}
+
+var showIngredients = function(profile){
+  var ingredients = document.getElementById('beer-ingredients');
+  if (ingredients != null){
+    while (ingredients.firstChild){
+      ingredients.removeChild(ingredients.firstChild);
+    }
+  }
+  var header = document.createElement('h2');
+  ingredients.appendChild(header);
+  header.innerText = "Ingredients";
+  var malt = profile.ingredients.malt;
+  for (thing of malt){
+    var name = thing.name;
+    var nameTag = document.createElement('p');
+    nameTag.innerText = name;
+    header.appendChild(nameTag);
+  }
 
 }
 
@@ -61,6 +80,7 @@ var switchBeer = function(){
     }
   }
   beerProfileSetUp(newBeer);
+  showIngredients(newBeer);
 }
 
 
