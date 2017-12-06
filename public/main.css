@@ -1,5 +1,10 @@
-main{
-  width: 300px;
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #aba7b9
+}
+
+h1 {
+  text-align: center;
 }
 
 input{
@@ -10,27 +15,34 @@ input{
   margin: 10px;
 }
 
-.beers{
+#beers{
   padding: 5px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-#beer-list{
-  max-width: 600px;
-}
-
-.beer-profile {
-  width: 200px;
-  height: 200px;
+#beer-profile {
+  color: white;
+  font-size: 18px;
+  padding: 20px;
+  margin: auto;
+  margin-top: 50px;
   font-size: 20px;
-  margin: 5px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: none;
 }
 
-.beer-profile > img {
+#beer-profile > p{
+  background-color: #293560;
+  border-radius: 20px;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+img {
   width: 50px;
   height: 180px;
-  align-self: flex-end;
 }

@@ -30,16 +30,15 @@ var getBeer = function(name){
   }
 }
 
-var beerProfileSetUp = function(profile, ul){
-  var thisBeer = document.createElement('div')
-  thisBeer.classList.add("beer-profile");
+var beerProfileSetUp = function(profile){
+  var thisBeer = document.getElementById('beer-profile');
   var img = document.createElement('img');
   img.src = profile.image_url;
   thisBeer.appendChild(img);
   var name = document.createElement('p');
   name.innerText = profile.name;
   thisBeer.appendChild(name);
-  ul.appendChild(thisBeer);
+
 }
 
 var populateDropdown = function(beers){
@@ -55,11 +54,13 @@ var populateDropdown = function(beers){
 var switchBeer = function(){
   var name = this.value;
   var newBeer = getBeer(name);
-  var ul = document.getElementById('beer-list');
-  while (ul.firstChild){
-    ul.removeChild(ul.firstChild);
+  var ul = document.getElementById('beer-profile');
+  if (ul != null){
+    while (ul.firstChild){
+      ul.removeChild(ul.firstChild);
+    }
   }
-  beerProfileSetUp(newBeer, ul);
+  beerProfileSetUp(newBeer);
 }
 
 
