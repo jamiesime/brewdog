@@ -1,6 +1,5 @@
 main{
   width: 300px;
-  margin: 0 auto;
 }
 
 input{
@@ -13,4 +12,25 @@ input{
 
 .beers{
   padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#beer-list{
+  max-width: 600px;
+}
+
+.beer-profile {
+  width: 200px;
+  height: 200px;
+  font-size: 20px;
+  margin: 5px;
+
+}
+
+.beer-profile > img {
+  width: 50px;
+  height: 180px;
+  align-self: flex-end;
 }
